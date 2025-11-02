@@ -1,57 +1,52 @@
-"use client";
+'use client'
 
-import { SmallSidebar } from "./smallSidebar";
-import { LargeSidebar } from "./largeSidebar";
-import {
-  ClipboardListIcon,
-  GraduationCap,
-  LayoutPanelLeftIcon,
-  type LucideIcon,
-} from "lucide-react";
+import { SmallSidebar } from './smallSidebar'
+import { LargeSidebar } from './largeSidebar'
+import { ClipboardListIcon, GraduationCap, LayoutPanelLeftIcon, type LucideIcon } from 'lucide-react'
 
 export type Item = {
-  title: string;
-  url: string;
-  icon?: LucideIcon;
-};
+  title: string
+  url: string
+  icon?: LucideIcon
+}
 
 export type NavMain = Item & {
-  items?: Item[];
-};
+  items?: Item[]
+}
 
 const Sidebar = () => {
   // const t = useTranslations("Components.Sidebar.item");
 
   const navMain: NavMain[] = [
     {
-      title: "Playground",
+      title: 'Playground',
       icon: LayoutPanelLeftIcon,
-      url: "#",
+      url: '#',
       items: [
-        { icon: LayoutPanelLeftIcon, title: "History", url: "#" },
+        { icon: LayoutPanelLeftIcon, title: 'History', url: '#' },
         {
-          title: "Starred",
-          url: "#",
+          title: 'Starred',
+          url: '#',
         },
         {
-          title: "Settings",
-          url: "#",
+          title: 'Settings',
+          url: '#',
         },
       ],
     },
     {
-      title: "Play",
+      title: 'Play',
       icon: LayoutPanelLeftIcon,
-      url: "#",
+      url: '#',
     },
-  ];
+  ]
 
   return (
-    <section className="border-r z-999">
+    <section className='border-r z-999'>
       {/* <SmallSidebar nav={navMain} /> */}
       <LargeSidebar nav={navMain} />
     </section>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

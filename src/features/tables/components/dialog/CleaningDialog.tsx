@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   Dialog,
@@ -7,14 +7,14 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { TableProps } from "../Table";
+} from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { TableProps } from '../Table'
 
 interface CleaningDialogProps {
-  open: boolean;
-  table: TableProps;
-  onOpenChange: (open: boolean) => void;
+  open: boolean
+  table: TableProps
+  onOpenChange: (open: boolean) => void
 }
 
 const CleaningDialog = ({ open, table, onOpenChange }: CleaningDialogProps) => {
@@ -23,12 +23,10 @@ const CleaningDialog = ({ open, table, onOpenChange }: CleaningDialogProps) => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Cleaning Status</DialogTitle>
-          <DialogDescription>
-            Table {table.label} is currently being cleaned.
-          </DialogDescription>
+          <DialogDescription>Table {table.label} is currently being cleaned.</DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-2">
+        <div className='space-y-2'>
           <p>
             <strong>Table:</strong> {table.label}
           </p>
@@ -44,14 +42,14 @@ const CleaningDialog = ({ open, table, onOpenChange }: CleaningDialogProps) => {
         </div>
 
         <DialogFooter>
-          <Button variant="outline" onClick={() => alert("Mark as Cleaned")}>
+          <Button variant='outline' onClick={() => alert('Mark as Cleaned')}>
             Mark as Cleaned
           </Button>
           <Button onClick={() => onOpenChange(false)}>Close</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
-export default CleaningDialog;
+export default CleaningDialog

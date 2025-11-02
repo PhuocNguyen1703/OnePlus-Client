@@ -1,60 +1,60 @@
-import { create } from "zustand";
+import { create } from 'zustand'
 
 export type AlertDialogOptions = {
-  title?: string;
-  description?: string;
-  onCancel?: () => void;
-  onAction?: () => void;
-};
+  title?: string
+  description?: string
+  onCancel?: () => void
+  onAction?: () => void
+}
 
 type AlertState = {
-  isOpen: boolean;
-  title: string;
-  description: string;
-  onCancelCallback: (() => void) | null;
-  onActionCallback: (() => void) | null;
-};
+  isOpen: boolean
+  title: string
+  description: string
+  onCancelCallback: (() => void) | null
+  onActionCallback: (() => void) | null
+}
 
 type AlertAction = {
-  open: (options?: AlertDialogOptions) => void;
-  close: () => void;
-  cancel: () => void;
-  action: () => void;
-};
+  open: (options?: AlertDialogOptions) => void
+  close: () => void
+  cancel: () => void
+  action: () => void
+}
 
 const initialState: AlertState = {
   isOpen: false,
-  title: "",
-  description: "",
+  title: '',
+  description: '',
   onCancelCallback: null,
   onActionCallback: null,
-};
+}
 
 const useAlertDialogStore = create<AlertState & AlertAction>()((set, get) => ({
   ...initialState,
   open: (options = {}) =>
     set({
       isOpen: true,
-      title: options.title || "",
-      description: options.description || "",
+      title: options.title || '',
+      description: options.description || '',
       onCancelCallback: options.onCancel || null,
       onActionCallback: options.onAction || null,
     }),
   close: () => set({ ...initialState }),
   cancel: () => {
-    const { onCancelCallback, close } = get();
+    const { onCancelCallback, close } = get()
     if (onCancelCallback) {
-      onCancelCallback();
+      onCancelCallback()
     }
-    close();
+    close()
   },
   action: () => {
-    const { onActionCallback, close } = get();
+    const { onActionCallback, close } = get()
     if (onActionCallback) {
-      onActionCallback();
+      onActionCallback()
     }
-    close();
+    close()
   },
-}));
+}))
 
-export default useAlertDialogStore;
+export default useAlertDialogStore

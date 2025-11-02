@@ -1,10 +1,10 @@
-import Card from "@/components/layouts/Card";
+import Card from '@/components/layouts/Card'
 
 const Home = () => {
   return (
-    <main className="flex flex-col gap-2 md:gap-4 overflow-y-auto">
-      <div className="flex flex-col gap-2 md:gap-4 w-full md:w-3/4">
-        <div className="flex flex-col gap-2">
+    <main className='flex flex-col gap-2 md:gap-4 overflow-y-auto'>
+      <div className='flex flex-col gap-2 md:gap-4 w-full md:w-3/4'>
+        <div className='flex flex-col gap-2'>
           <Card />
         </div>
         {/* <div className="flex gap-4 h-[800px]">
@@ -25,7 +25,7 @@ const Home = () => {
         <div className="flex-1 bg-amber-600"></div>
       </div> */}
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

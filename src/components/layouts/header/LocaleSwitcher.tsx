@@ -1,34 +1,34 @@
-import { useLocale, useTranslations } from "next-intl";
-import { LocaleSwitcherSelect } from "./LocaleSwitcherSelect";
-import { japanFlag, ukFlag, vietnamFlag } from "../../../../public/images";
+import { useLocale, useTranslations } from 'next-intl'
+import { LocaleSwitcherSelect } from './LocaleSwitcherSelect'
+import { japanFlag, ukFlag, vietnamFlag } from '../../../../public/images'
 
 const LocaleSwitcher = () => {
-  const t = useTranslations("Components.LocaleSwitcher");
-  const locale = useLocale();
+  const t = useTranslations('Components.LocaleSwitcher')
+  const locale = useLocale()
 
   return (
     <LocaleSwitcherSelect
       defaultValue={locale}
-      label={t("label")}
+      label={t('label')}
       items={[
         {
           icon: ukFlag,
-          label: t("en"),
-          value: "en",
+          label: t('en'),
+          value: 'en',
         },
         {
           icon: japanFlag,
-          label: t("jp"),
-          value: "jp",
+          label: t('jp'),
+          value: 'jp',
         },
         {
           icon: vietnamFlag,
-          label: t("vi"),
-          value: "vi",
+          label: t('vi'),
+          value: 'vi',
         },
       ]}
     />
-  );
-};
+  )
+}
 
-export default LocaleSwitcher;
+export default LocaleSwitcher

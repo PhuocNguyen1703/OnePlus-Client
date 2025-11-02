@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
 const Loader = () => {
-  return <div className="loader" />;
-};
+  return <div className='loader' />
+}
 
-export default Loader;
+export default Loader

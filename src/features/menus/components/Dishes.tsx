@@ -1,5 +1,5 @@
 const Dishes = () => {
-  return <div>Dishes</div>;
-};
+  return <div>Dishes</div>
+}
 
-export default Dishes;
+export default Dishes

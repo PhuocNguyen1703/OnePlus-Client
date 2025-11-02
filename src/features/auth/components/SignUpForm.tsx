@@ -1,58 +1,44 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "../../../components/ui/checkbox";
-import { PasswordInput } from "@/components/ui/password-input";
-import { useSignUp } from "../hooks/useSignUp";
-import { SignUpBodyType } from "../schemas";
+import { Button } from '@/components/ui/button'
+import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Checkbox } from '../../../components/ui/checkbox'
+import { PasswordInput } from '@/components/ui/password-input'
+import { useSignUp } from '../hooks/useSignUp'
+import { SignUpBodyType } from '../schemas'
 
 const SignUpForm = () => {
-  const { form, signUp } = useSignUp();
+  const { form, signUp } = useSignUp()
 
   const onSubmit = async (signUpData: SignUpBodyType) => {
-    await signUp(signUpData);
-  };
+    await signUp(signUpData)
+  }
 
   return (
     <Form {...form}>
-      <form className="mt-10" onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="flex-center gap-5">
+      <form className='mt-10' onSubmit={form.handleSubmit(onSubmit)}>
+        <div className='flex-center gap-5'>
           <FormField
             control={form.control}
-            name="firstName"
+            name='firstName'
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-base">First Name</FormLabel>
+                <FormLabel className='text-base'>First Name</FormLabel>
                 <FormControl>
-                  <Input
-                    className="h-12 rounded-[8px] text-base"
-                    placeholder="First Name"
-                    {...field}
-                  />
+                  <Input className='h-12 rounded-[8px] text-base' placeholder='First Name' {...field} />
                 </FormControl>
               </FormItem>
             )}
           />
           <FormField
             control={form.control}
-            name="lastName"
+            name='lastName'
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-base">Last Name</FormLabel>
+                <FormLabel className='text-base'>Last Name</FormLabel>
                 <FormControl>
-                  <Input
-                    className="h-12 rounded-[8px] text-base"
-                    placeholder="last Name"
-                    {...field}
-                  />
+                  <Input className='h-12 rounded-[8px] text-base' placeholder='last Name' {...field} />
                 </FormControl>
               </FormItem>
             )}
@@ -60,48 +46,44 @@ const SignUpForm = () => {
         </div>
         <FormField
           control={form.control}
-          name="username"
+          name='username'
           render={({ field }) => (
-            <FormItem className="mt-5">
-              <FormLabel className="text-base">Email</FormLabel>
+            <FormItem className='mt-5'>
+              <FormLabel className='text-base'>Email</FormLabel>
               <FormControl>
-                <Input
-                  className="h-12 rounded-[8px] text-base"
-                  placeholder="Enter your email"
-                  {...field}
-                />
+                <Input className='h-12 rounded-[8px] text-base' placeholder='Enter your email' {...field} />
               </FormControl>
             </FormItem>
           )}
         />
         <FormField
           control={form.control}
-          name="password"
+          name='password'
           render={({ field }) => (
-            <FormItem className="mt-5">
-              <FormLabel className="text-base">Password</FormLabel>
+            <FormItem className='mt-5'>
+              <FormLabel className='text-base'>Password</FormLabel>
               <FormControl>
                 <PasswordInput
-                  className="h-12 rounded-[8px] text-base pr-10"
-                  placeholder="Enter your password"
+                  className='h-12 rounded-[8px] text-base pr-10'
+                  placeholder='Enter your password'
                   {...field}
                 />
               </FormControl>
             </FormItem>
           )}
         />
-        <div className="flex-center space-x-2 mt-5 text-sm leading-none">
-          <Checkbox id="remember" />
+        <div className='flex-center space-x-2 mt-5 text-sm leading-none'>
+          <Checkbox id='remember' />
           <span>
             I agree to the <strong>Terms &amp; Conditions</strong>
           </span>
         </div>
-        <Button className="w-full h-12 mt-10 text-base" type="submit">
+        <Button className='w-full h-12 mt-10 text-base' type='submit'>
           Continue
         </Button>
       </form>
     </Form>
-  );
-};
+  )
+}
 
-export default SignUpForm;
+export default SignUpForm

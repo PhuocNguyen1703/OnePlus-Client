@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   Dialog,
@@ -7,32 +7,26 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { TableProps } from "../Table";
+} from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { TableProps } from '../Table'
 
 interface ReservationDialogProps {
-  open: boolean;
-  table: TableProps;
-  onOpenChange: (open: boolean) => void;
+  open: boolean
+  table: TableProps
+  onOpenChange: (open: boolean) => void
 }
 
-const ReservationDialog = ({
-  open,
-  table,
-  onOpenChange,
-}: ReservationDialogProps) => {
+const ReservationDialog = ({ open, table, onOpenChange }: ReservationDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Reservation Info</DialogTitle>
-          <DialogDescription>
-            View reservation details for table {table.label}.
-          </DialogDescription>
+          <DialogDescription>View reservation details for table {table.label}.</DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-2">
+        <div className='space-y-2'>
           <p>
             <strong>Table:</strong> {table.label}
           </p>
@@ -59,7 +53,7 @@ const ReservationDialog = ({
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
-export default ReservationDialog;
+export default ReservationDialog

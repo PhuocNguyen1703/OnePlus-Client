@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import { useTokenManager } from "@/hooks/useTokenManager";
+import { useTokenManager } from '@/hooks/useTokenManager'
 
 export default function CheckToken() {
-  useTokenManager();
-  return null;
+  useTokenManager()
+  return null
 }

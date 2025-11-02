@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   AlertDialog,
@@ -9,14 +9,14 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import useAlertDialogStore from "@/stores/alertDialog.store";
-import { GradientButton } from "../ui/gradient-button";
+} from '@/components/ui/alert-dialog'
+import useAlertDialogStore from '@/stores/alertDialog.store'
+import { GradientButton } from '../ui/gradient-button'
 
 const ActionAlertDialog = () => {
-  const { isOpen, title, description, cancel, action } = useAlertDialogStore();
+  const { isOpen, title, description, cancel, action } = useAlertDialogStore()
   if (!isOpen) {
-    return null;
+    return null
   }
 
   return (
@@ -27,14 +27,14 @@ const ActionAlertDialog = () => {
           <AlertDialogDescription>{description}</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel onClick={cancel} className="focus:!outline-hidden">
+          <AlertDialogCancel onClick={cancel} className='focus:!outline-hidden'>
             Cancel
           </AlertDialogCancel>
           <GradientButton onClick={action}>Continue</GradientButton>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  );
-};
+  )
+}
 
-export default ActionAlertDialog;
+export default ActionAlertDialog

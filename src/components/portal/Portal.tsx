@@ -1,25 +1,25 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
+import { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom'
 
 const Portal = ({ children }: { children: React.ReactNode }) => {
-  const [wrapper, setWrapper] = useState<HTMLDivElement>();
+  const [wrapper, setWrapper] = useState<HTMLDivElement>()
 
   useEffect(() => {
-    const portal = document.createElement("div");
-    document.body.appendChild(portal);
+    const portal = document.createElement('div')
+    document.body.appendChild(portal)
 
-    setWrapper(portal);
+    setWrapper(portal)
 
     return () => {
-      document.body.removeChild(portal);
-    };
-  }, []);
+      document.body.removeChild(portal)
+    }
+  }, [])
 
-  if (!wrapper) return null;
+  if (!wrapper) return null
 
-  return ReactDOM.createPortal(children, wrapper);
-};
+  return ReactDOM.createPortal(children, wrapper)
+}
 
-export default Portal;
+export default Portal

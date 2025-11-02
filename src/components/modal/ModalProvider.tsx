@@ -5,7 +5,7 @@ const ModalProvider = () => {
       {/* <CreateNewCampus /> */}
       {/* <GuardianView /> */}
     </>
-  );
-};
+  )
+}
 
-export default ModalProvider;
+export default ModalProvider

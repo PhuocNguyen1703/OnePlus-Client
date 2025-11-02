@@ -1,12 +1,6 @@
-import { z } from "zod";
+import { z } from 'zod'
 
-const statusEnum = z.enum([
-  "available",
-  "reserved",
-  "occupied",
-  "cleaning",
-  "locked",
-]);
+const statusEnum = z.enum(['available', 'reserved', 'occupied', 'cleaning', 'locked'])
 
 export const TableSchema = z.object({
   label: z.string(),
@@ -14,6 +8,6 @@ export const TableSchema = z.object({
   seatCount: z.number(),
   status: statusEnum,
   qrCode: z.string().optional(),
-});
+})
 
-export type TableSchemaType = z.infer<typeof TableSchema>;
+export type TableSchemaType = z.infer<typeof TableSchema>

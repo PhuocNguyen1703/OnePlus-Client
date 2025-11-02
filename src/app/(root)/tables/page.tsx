@@ -1,16 +1,16 @@
-import Header from "@/features/tables/components/Header";
-import TableManager from "@/features/tables/components/TableManager";
-import { generateTables } from "@/features/tables/utils/generateTables";
+import Header from '@/features/tables/components/Header'
+import TableManager from '@/features/tables/components/TableManager'
+import { generateTables } from '@/features/tables/utils/generateTables'
 
 const TableManage = () => {
-  const tableList = generateTables(50);
+  const tableList = generateTables(50)
 
   return (
-    <section className="relative">
+    <section className='relative'>
       <Header />
       <TableManager initialTables={tableList} />
     </section>
-  );
-};
+  )
+}
 
-export default TableManage;
+export default TableManage

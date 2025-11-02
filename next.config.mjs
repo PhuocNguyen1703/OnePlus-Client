@@ -1,6 +1,6 @@
-import createNextIntlPlugin from "next-intl/plugin";
+import createNextIntlPlugin from 'next-intl/plugin'
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,22 +8,22 @@ const nextConfig = {
     qualities: [50, 75, 100],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
       },
       {
-        protocol: "https",
-        hostname: "plus.unsplash.com",
-        port: "",
+        protocol: 'https',
+        hostname: 'plus.unsplash.com',
+        port: '',
       },
       {
-        protocol: "https",
-        hostname: "loremflickr.com",
-        port: "",
+        protocol: 'https',
+        hostname: 'loremflickr.com',
+        port: '',
       },
     ],
   },
-};
+}
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(nextConfig)

@@ -1,83 +1,71 @@
-"use client";
+'use client'
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { DialogClose } from "@/components/ui/dialog";
-import { useTable } from "../hooks/useTable";
-import { TableSchemaType } from "../schemas";
-import { useEffect } from "react";
-import { Trash2Icon } from "lucide-react";
-import { areaOptions } from "../constants";
+import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { DialogClose } from '@/components/ui/dialog'
+import { useTable } from '../hooks/useTable'
+import { TableSchemaType } from '../schemas'
+import { useEffect } from 'react'
+import { Trash2Icon } from 'lucide-react'
+import { areaOptions } from '../constants'
 
-export const seatCounts = [2, 4, 6, 8, 10];
+export const seatCounts = [2, 4, 6, 8, 10]
 
 interface TableFormProps {
-  mode: "add" | "edit";
-  defaultValues?: Partial<TableSchemaType> & { _id?: string };
-  open: boolean;
+  mode: 'add' | 'edit'
+  defaultValues?: Partial<TableSchemaType> & { _id?: string }
+  open: boolean
 }
 
 export const TableForm = ({ mode, defaultValues, open }: TableFormProps) => {
-  const { form, addTable, editTable, deleteTable } = useTable(defaultValues);
+  const { form, addTable, editTable, deleteTable } = useTable(defaultValues)
 
   useEffect(() => {
     if (!open) {
-      form.reset();
+      form.reset()
     }
-  }, [open, form, defaultValues]);
+  }, [open, form, defaultValues])
 
   const onSubmit = async (formData: TableSchemaType) => {
-    if (mode === "add") {
-      await addTable(formData);
+    if (mode === 'add') {
+      await addTable(formData)
     }
-    if (mode === "edit") {
-      await editTable(formData);
+    if (mode === 'edit') {
+      await editTable(formData)
     }
-  };
+  }
 
   const handleDeleteTable = async () => {
-    deleteTable(defaultValues?._id);
-  };
+    deleteTable(defaultValues?._id)
+  }
 
   return (
     <Form {...form}>
-      <form className="mt-6 space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
+      <form className='mt-6 space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
-          name="label"
+          name='label'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Label</FormLabel>
               <FormControl>
-                <Input placeholder="Table label" autoFocus {...field} />
+                <Input placeholder='Table label' autoFocus {...field} />
               </FormControl>
             </FormItem>
           )}
         />
         <FormField
           control={form.control}
-          name="area"
+          name='area'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Area</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select area" />
+                    <SelectValue placeholder='Select area' />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -85,7 +73,7 @@ export const TableForm = ({ mode, defaultValues, open }: TableFormProps) => {
                     <SelectItem
                       key={opt.key}
                       value={opt.key as string}
-                      className="cursor-pointer  hover:bg-accent hover:text-accent-foreground"
+                      className='cursor-pointer  hover:bg-accent hover:text-accent-foreground'
                     >
                       {opt.label}
                     </SelectItem>
@@ -97,7 +85,7 @@ export const TableForm = ({ mode, defaultValues, open }: TableFormProps) => {
         />
         <FormField
           control={form.control}
-          name="seatCount"
+          name='seatCount'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Seat Count</FormLabel>
@@ -107,7 +95,7 @@ export const TableForm = ({ mode, defaultValues, open }: TableFormProps) => {
               >
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select seat count" />
+                    <SelectValue placeholder='Select seat count' />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -115,7 +103,7 @@ export const TableForm = ({ mode, defaultValues, open }: TableFormProps) => {
                     <SelectItem
                       key={idx}
                       value={String(count)}
-                      className="cursor-pointer  hover:bg-accent hover:text-accent-foreground"
+                      className='cursor-pointer  hover:bg-accent hover:text-accent-foreground'
                     >
                       {count}
                     </SelectItem>
@@ -125,26 +113,20 @@ export const TableForm = ({ mode, defaultValues, open }: TableFormProps) => {
             </FormItem>
           )}
         />
-        <div className="flex justify-between pt-6">
+        <div className='flex justify-between pt-6'>
           <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant='outline'>Cancel</Button>
           </DialogClose>
-          <div className="flex items-center space-x-2">
-            {mode === "edit" && (
-              <Button
-                variant="outline"
-                type="button"
-                onClick={handleDeleteTable}
-              >
-                <Trash2Icon color="#9d0208" />
+          <div className='flex items-center space-x-2'>
+            {mode === 'edit' && (
+              <Button variant='outline' type='button' onClick={handleDeleteTable}>
+                <Trash2Icon color='#9d0208' />
               </Button>
             )}
-            <Button type="submit">
-              {mode === "add" ? "Add Table" : "Save Changes"}
-            </Button>
+            <Button type='submit'>{mode === 'add' ? 'Add Table' : 'Save Changes'}</Button>
           </div>
         </div>
       </form>
     </Form>
-  );
-};
+  )
+}

@@ -1,15 +1,15 @@
-import { create } from "zustand";
+import { create } from 'zustand'
 
 interface StoreState {
-  isLargeSidebarOpen: boolean;
-  isSmallSidebarOpen: boolean;
-  toggleSidebar: () => void;
-  closeSidebar: () => void;
+  isLargeSidebarOpen: boolean
+  isSmallSidebarOpen: boolean
+  toggleSidebar: () => void
+  closeSidebar: () => void
 }
 
 const isScreenSmall = () => {
-  return window.innerWidth < 1024;
-};
+  return window.innerWidth < 1024
+}
 
 const useSidebarStore = create<StoreState>()((set) => ({
   isLargeSidebarOpen: true,
@@ -18,24 +18,24 @@ const useSidebarStore = create<StoreState>()((set) => ({
     if (isScreenSmall()) {
       set((state) => ({
         isSmallSidebarOpen: !state.isSmallSidebarOpen,
-      }));
+      }))
     } else {
       set((state) => ({
         isLargeSidebarOpen: !state.isLargeSidebarOpen,
-      }));
+      }))
     }
   },
   closeSidebar: () => {
     if (isScreenSmall()) {
       set(() => ({
         isSmallSidebarOpen: false,
-      }));
+      }))
     } else {
       set(() => ({
         isLargeSidebarOpen: false,
-      }));
+      }))
     }
   },
-}));
+}))
 
-export default useSidebarStore;
+export default useSidebarStore

@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import BackToSignIn from '@/components/layouts/BackToSignIn'
 import ForgotPasswordForm from '@/features/auth/components/ForgotPasswordForm'

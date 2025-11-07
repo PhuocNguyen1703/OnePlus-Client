@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { Fragment } from 'react'
 import { SmallSidebarItem } from './SmallSidebarItem'

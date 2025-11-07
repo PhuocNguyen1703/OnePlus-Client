@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { Item } from '../Sidebar'
 import { SidebarItem } from '../SidebarItem'

@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { GradientButton } from '@/components/ui/gradient-button'
 import { PlusIcon } from 'lucide-react'

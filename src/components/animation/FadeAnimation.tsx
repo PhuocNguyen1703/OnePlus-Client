@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { cn } from '@/libs/utils'
 import { motion } from 'motion/react'

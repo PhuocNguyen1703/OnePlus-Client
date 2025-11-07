@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { PanelLeftIcon } from 'lucide-react'
 import useSidebarStore from '@/stores/sidebar.store'

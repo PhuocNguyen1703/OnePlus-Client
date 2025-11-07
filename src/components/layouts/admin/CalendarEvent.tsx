@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { Calendar } from '@/components/ui/calendar'
 import { Ellipsis } from 'lucide-react'

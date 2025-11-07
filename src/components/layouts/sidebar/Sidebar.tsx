@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { SmallSidebar } from './smallSidebar'
 import { LargeSidebar } from './largeSidebar'

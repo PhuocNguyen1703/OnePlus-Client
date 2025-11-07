@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import Link from 'next/link'
 import Logo from '../../Logo'

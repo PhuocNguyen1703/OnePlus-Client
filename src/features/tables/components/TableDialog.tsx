@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { useDialogActions, useDialogState } from '@/stores/table.store'
 import { AvailableDialog, CleaningDialog, EditTableDialog, OccupiedDialog, ReservationDialog } from './dialog'

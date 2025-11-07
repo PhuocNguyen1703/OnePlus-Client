@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 const Loader = () => {
   return <div className='loader' />

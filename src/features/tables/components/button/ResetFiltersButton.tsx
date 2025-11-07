@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { Button } from '@/components/ui/button'
 import { useFilterActions, useFilterOptions } from '@/stores/table.store'

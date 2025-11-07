@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import Table, { TableProps } from './Table'
 import { filterTables } from '../utils/filterTable'

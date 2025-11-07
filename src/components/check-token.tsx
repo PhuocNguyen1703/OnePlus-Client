@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { useTokenManager } from '@/hooks/useTokenManager'
 

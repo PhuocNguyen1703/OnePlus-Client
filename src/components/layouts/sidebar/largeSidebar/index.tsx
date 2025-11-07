@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { LargeSidebarItem } from './LargeSidebarItem'
 import { HeaderLogo } from '@/components/layouts/header/HeaderLogo'

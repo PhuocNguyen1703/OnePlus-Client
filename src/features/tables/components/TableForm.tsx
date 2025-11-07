@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'

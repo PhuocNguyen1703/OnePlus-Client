@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import * as React from 'react'
 import { usePathname } from 'next/navigation'

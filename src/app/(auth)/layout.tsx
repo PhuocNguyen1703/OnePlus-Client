@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { FadeAnimation } from '@/components/animation/FadeAnimation'
 import Logo from '@/components/Logo'

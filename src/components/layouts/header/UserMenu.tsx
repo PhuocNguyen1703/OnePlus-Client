@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { Blend, Languages, LifeBuoy, MonitorCog, MoonStar, Power, Settings, Sun } from 'lucide-react'
 import {

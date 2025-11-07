@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { Ellipsis } from 'lucide-react'
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'

@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { format } from 'date-fns'
 import { CalendarIcon } from 'lucide-react'

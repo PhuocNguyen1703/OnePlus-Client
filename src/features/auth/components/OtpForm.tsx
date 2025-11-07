@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { InputOTP, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp'

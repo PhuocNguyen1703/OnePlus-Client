@@ -1,4 +1,5 @@
-'use client'
+// prettier-ignore
+"use client"
 
 import Image from 'next/image'
 import 'swiper/css'
